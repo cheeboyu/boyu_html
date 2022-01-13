@@ -1,0 +1,170 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+}
+
+#container {
+    width: 1200px;
+    margin: auto;
+    padding: auto;
+}
+
+#container_thumbnail {
+    width: 660px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#thumbnail_Pink {
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+    border: 5px solid pink;
+    cursor: pointer;
+}
+
+#thumbnail_Pink:hover {
+    border: 10px solid pink;
+}
+
+#thumbnail_Orange {
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+    border: 5px solid orange;
+    cursor: pointer;
+}
+
+#thumbnail_Orange:hover {
+    border: 10px solid orange;
+}
+
+#thumbnail_Grey {
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+    border: 5px solid grey;
+    cursor: pointer;
+}
+
+#thumbnail_Grey:hover {
+    border: 10px solid grey;
+}
+
+#thumbnail_Brown {
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+    border: 5px solid brown;
+    cursor: pointer;
+}
+
+#thumbnail_Brown:hover {
+    border: 10px solid brown;
+}
+
+#container_slider {
+    width: 800px;
+    height: 444px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+#slider {
+    width: 800px;
+    height: 400px;
+	border-style: solid;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+a:hover {
+    background-color: #DDD;
+    color: black;
+}
+
+.previousRound {
+    background-color: #F1F1F1;
+    color: black;
+	border-radius: 50%;
+	align: center;
+}
+
+.nextRound {
+    background-color: #F1F1F1;
+    color: black;
+	border-radius: 50%;
+	align: center;
+}
+
+#nextPosition {
+    position: relative;
+    left: 93%;
+    bottom: 63%;
+}
+
+#previousPosition {
+    position: relative;
+    left: 1%;
+    bottom: 55%;
+}
+
+#startStopBtn {
+    position: relative;
+    margin-left: 50%;
+}
+
+.SSbuttons {
+    height: 25px;
+    width: 100px;
+    border-radius: 8px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkite-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+input {
+  margin: 0 auto;
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #000000;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+input:hover {background-color: #00000}
+
+input:active {
+  background-color: #00000;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

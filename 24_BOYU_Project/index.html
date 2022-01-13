@@ -1,0 +1,321 @@
+ <!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bo Yu Car World Galley</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script>
+
+var boyutimer;
+var boyuindex = 0;
+var boyucurrentColour = 0;
+
+var boyugallery = new Array();
+
+ function loadImagesPink() {
+        boyugallery[0]="images/audi/audi_a8l.jpg";
+        boyugallery[1]="images/audi/audi_q8.jpg";
+        boyugallery[2]="images/audi/audi_r8.jpg";
+        boyugallery[3]="images/audi/audi_ttroadster.jpg";
+    }
+    //alert(loadImagesPink);
+	//use chrome developer tool to debug the error above
+    function loadImagesOrange() {
+        boyugallery[0]="images/bmw/bmw_7.jpg";
+        boyugallery[1]="images/bmw/bmw_m6.jpg";
+        boyugallery[2]="images/bmw/bmw_i8.jpg";
+        boyugallery[3]="images/bmw/bmw_x7.jpg";
+    }
+    
+    function loadImagesGrey() {
+        boyugallery[0]="images/ferrari/ferrari_488.jpg";
+        boyugallery[1]="images/ferrari/ferrari_f12.jpg";
+        boyugallery[2]="images/ferrari/ferrari_f8.jpg";
+        boyugallery[3]="images/ferrari/ferrari_la.jpg";
+    }
+    
+    function loadImagesBrown() {
+        boyugallery[0]="images/lamborghini/lamborghini_aventador.jpg";
+        boyugallery[1]="images/lamborghini/lamborghini_aventador_lp_700.jpg";
+        boyugallery[2]="images/lamborghini/lamborghini_aventador_lp_750.jpg";
+        boyugallery[3]="images/lamborghini/lamborghini_huracan.jpg";
+    }
+function loadboyucurrentColourImages() {
+    
+    if(boyucurrentColour == "Pink") {
+        loadImagesPink();
+    }
+    
+    if(boyucurrentColour == "Orange") {
+        loadImagesOrange();
+    }
+    
+    if(boyucurrentColour == "Grey") {
+        loadImagesGrey();   
+    }    
+    
+    if(boyucurrentColour == "Brown") {
+        loadImagesBrown();
+    }
+}
+
+function startPink() {
+    clearTimeout(boyutimer);
+    loadImagesPink();
+    document.body.style.backgroundColor = "#ffc0cb";
+    boyucurrentColour = "Pink";
+    document.getElementById("pageHeader").innerHTML="Audi";
+	document.getElementById("slider").src=boyugallery[boyuindex];
+    
+    slider.classList.remove("fade"); // Add fade transition
+    setTimeout(function(){slider.classList.add("fade");},20); // Add fade transition
+    
+    boyuindex = boyuindex + 1;
+    
+    if (boyuindex >= boyugallery.length) {
+        boyuindex = 0;
+    }
+    
+    boyutimer = setTimeout("startPink();", 5000);
+    
+}
+//document.write(startPink);
+//use chrome developer tool to debug the error above
+function startOrange() {
+    clearTimeout(boyutimer);
+loadImagesOrange();
+    document.body.style.backgroundColor = "#ffaa00";
+    boyucurrentColour = "Orange";
+    document.getElementById("pageHeader").innerHTML = "Bmw";
+    document.getElementById("slider").src=boyugallery[boyuindex];
+    
+    slider.classList.remove("fade"); // Add fade transition
+    setTimeout(function(){slider.classList.add("fade");},20); // Add fade transition
+    
+    boyuindex = boyuindex + 1;
+    
+    if (boyuindex >= boyugallery.length) {
+        boyuindex = 0;
+    }
+    
+    boyutimer = setTimeout("startOrange();", 5000);
+    
+}
+//use comment techniques to debug the error above
+function startGrey() {
+    clearTimeout(boyutimer);
+    loadImagesGrey();
+    document.body.style.backgroundColor = "#a3a3c2";
+    boyucurrentColour = "Grey";
+    document.getElementById("pageHeader").innerHTML = "Ferrari";
+    document.getElementById("slider").src=boyugallery[boyuindex];
+    
+    slider.classList.remove("fade"); // Add fade transition
+    setTimeout(function(){slider.classList.add("fade");},20); // Add fade transition
+    
+    boyuindex = boyuindex + 1;
+    
+    if (boyuindex >= boyugallery.length) {
+        boyuindex = 0;
+    }
+    
+    boyutimer = setTimeout("startGrey();", 5000);
+    
+}
+
+function startBrown() {
+    clearTimeout(boyutimer);
+    loadImagesBrown();
+    document.body.style.backgroundColor = "#B5651D";
+    boyucurrentColour = "Brown";
+    document.getElementById("pageHeader").innerHTML = "Lamborghini";
+    document.getElementById("slider").src=boyugallery[boyuindex];
+    
+    slider.classList.remove("fade"); // Add fade transition
+    setTimeout(function(){slider.classList.add("fade");},20); // Add fade transition
+    
+    boyuindex = boyuindex + 1;
+    
+    if (boyuindex >= boyugallery.length) {
+        boyuindex = 0;
+    }
+    
+    boyutimer = setTimeout("startBrown();", 5000);
+    
+}
+
+function previewPink() {
+    clearTimeout(boyutimer);
+     document.getElementById("pageHeader").innerHTML ="Audi";
+    var element = document.getElementById("slider");
+    element.classList.add("fade");
+    document.body.style.backgroundColor = "#ffc0cb";
+    document.getElementById("slider").src ="images/audi/audi_a8l.jpg";
+    boyucurrentColour = "Pink";
+}
+
+function previewOrange() {
+    clearTimeout(boyutimer);
+    document.getElementById("pageHeader").innerHTML = "Bmw";
+    var element = document.getElementById("slider");
+    element.classList.add("fade");
+    document.body.style.backgroundColor = "#ffaa00";
+    document.getElementById("slider").src ="images/bmw/bmw_7.jpg";
+    boyucurrentColour = "Orange";
+}
+
+function previewGrey() {
+    clearTimeout(boyutimer);
+    document.getElementById("pageHeader").innerHTML = "Ferrari";
+    var element = document.getElementById("slider");
+    element.classList.add("fade");
+    document.body.style.backgroundColor = "#a3a3c2";
+    document.getElementById("slider").src ="images/ferrari/ferrari_488.jpg";
+    boyucurrentColour = "Grey";
+}
+
+function previewBrown() {
+    clearTimeout(boyutimer);
+    document.getElementById("pageHeader").innerHTML = "Lamborghini";
+    var element = document.getElementById("slider");
+    element.classList.add("fade");
+    document.body.style.backgroundColor = "#B5651D";
+    document.getElementById("slider").src ="images/lamborghini/lamborghini_aventador.jpg";
+    boyucurrentColour = "Brown";
+}
+
+function previous() {
+    loadboyucurrentColourImages();
+    clearTimeout(boyutimer);
+    
+    if (boyucurrentColour == 0) {
+        document.getElementById("slider").src = "images/banner/bugatti_preview.jpg";
+		previewPink();
+    }
+    
+    else {
+        boyuindex = boyuindex - 1;
+        
+        if (boyuindex < 0) {
+            boyuindex = boyugallery.length - 1;
+        }
+        
+        document.getElementById("slider").src = boyugallery[boyuindex];
+        
+        slider.classList.remove("fade"); // Add fade transition
+        setTimeout(function(){slider.classList.add("fade");},20); // Add fade transition
+    }
+}
+
+function next() {
+    loadboyucurrentColourImages();
+    clearTimeout(boyutimer);    
+    
+    if (boyucurrentColour == 0) {
+        document.getElementById("slider").src = "images/banner/bugatti_preview.jpg";
+        previewBrown();
+    }
+    
+    else {
+        boyuindex = boyuindex + 1;
+        
+        if (boyuindex >= boyugallery.length) {
+            boyuindex = 0;
+        }
+        
+        document.getElementById("slider").src = boyugallery[boyuindex];
+        
+        slider.classList.remove("fade"); // Add fade transition
+        setTimeout(function(){slider.classList.add("fade");},20); // Add fade transition   
+    }
+}
+
+function stopSlideShow() {
+    boyutimer = clearTimeout(boyutimer)
+}
+
+boyucurrentColour = 'Pink'
+
+function startSlideShow() {
+	console.log('test')
+    boyutimer = setTimeout(startSlideShow, 15)
+
+    if (boyucurrentColour == 0) {
+        startPink()
+    }
+
+    if (boyucurrentColour == 'Pink') {
+        startPink()
+    }
+
+    if (boyucurrentColour == 'Orange') {
+        startOrange()
+    }
+
+    if (boyucurrentColour == 'Grey') {
+        startGrey()
+    }
+
+    if (boyucurrentColour == 'Brown') {
+        startBrown()
+    }
+}
+
+var boyutimer = null
+
+function startStopImg() {
+	console.log(boyutimer)
+    if (boyutimer != null) {
+        stopSlideShow()
+    } else {
+        startSlideShow()
+    }
+    change()
+}
+
+function change() {
+    var elem = document.getElementById('SSButton')
+    if (elem.value == 'Stop') elem.value = 'Start'
+    else elem.value = 'Stop'
+}
+
+document.querySelector('#SSButton').addEventListener('click', startStopImg)
+</script> 
+</head>
+    
+<body>
+<div id="container">
+    <h1 align="center">Bo Yu Car World Gallery</h1>
+    <div id="container_thumbnail">
+    <img id="thumbnail_Pink" src="images/audi/audi_logo.jpg" alt="Audi" onClick="previewPink();"/>
+    
+    <img id="thumbnail_Orange" src="images/bmw/bmw_logo.jpg" alt="Bmw" onClick="previewOrange();"/>
+    
+    <img id="thumbnail_Grey" src="images/ferrari/ferrari_logo.jpg" alt="Ferrari" onClick="previewGrey();"/>
+    
+    <img id="thumbnail_Brown" src="images/lamborghini/lamborghini_logo.jpg" alt="Lamborghini" onClick="previewBrown();"/>
+    </div>
+</div>
+   	
+<h1 id="pageHeader" align="center"></h1>
+<div id="container_slider">
+        
+    <img id="slider" src="images/banner/bugatti_preview.jpg" alt="preview">
+    
+    <div id="previousPosition">
+        <a href="#" onClick="return previous();" class="previousRound">&#8249;</a>
+    </div>
+    
+    <div id="nextPosition">
+        <a href="#" onClick="return next();" class="nextRound">&#8250;</a>
+    </div>
+    
+    <div id="startStopBtn">
+<input type="button" value="Start" onclick="javaScript:startStopImg()" id="SSButton">
+
+    </div>
+    
+</div>
+    
+</body>
+</html>
